@@ -9,7 +9,7 @@
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
+                <artifactId>mojo</artifactId>
                 <version>3.0.0</version>
                 <executions>
                     <execution>
