@@ -1,29 +1,44 @@
-name: AceFileExtract
+name: Set mqsiprofile in .profile
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 env:
- ACE_PATH: /home/desk-144/Pictures/ace/
- #BAR_CREATION: /home/desk-144/Documents/ace-12.0.2.0/tools/mqsicreatebar
- #BAR_STORE: /home/desk-144/Templates
- 
-jobs:
-  build:
-    runs-on: self-hosted
+ HOME: /root
+ ACE_PATH: /home/desk-144/Documents/ace-12.0.2.0/
 
+jobs:
+  set-mqsiprofile:
+    runs-on: self-hosted
+    
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-          distribution: 'adopt'
-          
-      - name: Ace Installation
-        run: |
-             cd $ACE_PATH
-             sudo tar -xvf 12.0-ACE-LINUXX64-12.0.2.0.tar.gz
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Ace run and Set mqsiprofile
+      run: |
+        # ace License accept
+        cd $ACE_PATH
+        ./ace
+        ./ace make global registry
+        # Add mqsiprofile configuration to .profile
+#        echo '. /opt/ibm/ace-12.0.2.0/server/bin/mqsiprofile' >> $HOME/.profile        
+#       echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
+
+
+#    - name: Verify mqsiprofile
+#      run: |
+        # Print the contents of .profile for verification
+#        cat $HOME/.profile
+
+#    - name: Source .profile
+#      run: |
+        # Source .profile to apply changes for the current session
+#        source $HOME/.profile
+
+    - name: Verify MQSI_WORKPATH
+      run: |
+        # Verify that MQSI_WORKPATH is set
+        echo $MQSI_WORKPATH
