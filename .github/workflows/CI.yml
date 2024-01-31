@@ -17,3 +17,4 @@ jobs:
       run: |
         sudo ls /root
         sudo -i
+        pwd
