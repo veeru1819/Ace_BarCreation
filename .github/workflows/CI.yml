@@ -23,6 +23,7 @@ jobs:
       run: |
         # ace License accept
         cd $ACE_PATH
+        sudo -i
         ./ace
         ./ace make registry global accept license
         # Add mqsiprofile configuration to .profile
