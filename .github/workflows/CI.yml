@@ -1,5 +1,4 @@
-name: Your Workflow Name
-
+name: Maven Install
 on:
   push:
     branches:
