@@ -25,10 +25,7 @@ jobs:
         cd $ACE_PATH
         ./ace
         ./ace make global registry
-    inputs:
-      press1:
-        description: 'Press 1 to continue'
-        required: true   
+        export LICENSE_ACCEPTED=true
         # Add mqsiprofile configuration to .profile
 #        echo '. /opt/ibm/ace-12.0.2.0/server/bin/mqsiprofile' >> $HOME/.profile        
 #       echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
