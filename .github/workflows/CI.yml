@@ -19,11 +19,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Ace run and Set mqsiprofile
+    - name: Run Command as Root
       run: |
-        # ace License accept
+        sudo su
         cd $ACE_PATH
-        sudo -i
         ./ace
         ./ace make registry global accept license
         # Add mqsiprofile configuration to .profile
