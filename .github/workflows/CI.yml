@@ -24,7 +24,7 @@ jobs:
         # ace License accept
         cd $ACE_PATH
         ./ace
-        ./ace make registry global accept license silently
+        ./ace make registry global accept license
         # Add mqsiprofile configuration to .profile
 #        echo '. /opt/ibm/ace-12.0.2.0/server/bin/mqsiprofile' >> $HOME/.profile        
 #       echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
