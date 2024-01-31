@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+   
+
 env:
 # HOME: /root
  ACE_PATH: /home/desk-144/Documents/ace-12.0.2.0/
@@ -23,7 +25,10 @@ jobs:
         cd $ACE_PATH
         ./ace
         ./ace make global registry
-        1
+    inputs:
+      press1:
+        description: 'Press 1 to continue'
+        required: true   
         # Add mqsiprofile configuration to .profile
 #        echo '. /opt/ibm/ace-12.0.2.0/server/bin/mqsiprofile' >> $HOME/.profile        
 #       echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
