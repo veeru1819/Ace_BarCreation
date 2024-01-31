@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
- ACE_PATH: /home/desk-144/Pictures/ace
+ ACE_PATH: /home/desk-144/Pictures/ace/
  #BAR_CREATION: /home/desk-144/Documents/ace-12.0.2.0/tools/mqsicreatebar
  #BAR_STORE: /home/desk-144/Templates
  
