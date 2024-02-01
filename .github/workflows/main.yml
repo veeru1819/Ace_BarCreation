@@ -1,49 +1,19 @@
-name: Set mqsiprofile in .profile
+name: Setup ACE mqsiprofile
 
 on:
   push:
     branches:
       - main
 
-env:
- #HOME: /root
- ACE_PATH: /opt/ibm/ace-12.0.2.0
-
 jobs:
-  set-mqsiprofile:
-    runs-on: self-hosted
-    
+  setup-ace-mqsiprofile:
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Accept ACE license
-      run: |
-          cd $ACE_PATH
-          ./ace
-          ./ace make registry global setup --acceptLicense   
-           #. /opt/ibm/ace-12.0.2.0 setup --acceptLicense
-          #echo 'y' | sudo /opt/ibm/ace-12.0.2.0 configure --acceptLicense
-
-    - name: Set mqsiprofile
-      run: |
-        # Add mqsiprofile configuration to .profile
-        #sudo -s
-        #echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
-        echo '. $ACE_PATH/bin/mqsiprofile' >> $HOME/.profile
-
-
-    - name: Verify mqsiprofile
-      run: |
-        # Print the contents of .profile for verification
-        cat $HOME/.profile
-
-    - name: Source .profile
-      run: |
-        # Source .profile to apply changes for the current session
-        source $HOME/.profile
-
-    - name: Verify MQSI_WORKPATH
-      run: |
-        # Verify that MQSI_WORKPATH is set
-        echo $MQSI_WORKPATH
+      - name: Accept ACE license
+        run: |
+          echo 'y' | sudo /opt/ibm/ace-12.0.2.0 setup --acceptLicense
+          echo 'y' | sudo /opt/ibm/ace-12.0.2.0 configure --acceptLicense
