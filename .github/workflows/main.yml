@@ -7,7 +7,7 @@ on:
 
 env:
  #HOME: /root
- ACE_PATH: /home/desk-144/Documents/ace-12.0.2.0/
+ ACE_PATH: /opt/ibm/ace-12.0.2.0
 
 jobs:
   set-mqsiprofile:
@@ -27,7 +27,7 @@ jobs:
       run: |
         # Add mqsiprofile configuration to .profile
         sudo -s
-        echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
+        #echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
         echo '. $ACE_PATH/bin/mqsiprofile' >> $HOME/.profile
 
 
