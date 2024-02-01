@@ -1,0 +1,22 @@
+name: Install and Access Jenkins
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-jenkins:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Jenkins
+        run: |
+          # Install Jenkins (example command, adjust based on your server setup)
+          ssh desk-144@192.168.1.101 'sudo apt update && sudo apt install -y openjdk-11-jdk jenkins'
+
+      - name: Access Jenkins
+        run: |
+          # Output Jenkins URL (replace with actual URL)
+          echo "Jenkins is accessible at http://192.168.1.101:8080/"
