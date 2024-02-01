@@ -13,6 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Accept ACE license
+      - name: Set up IBM ACE
         run: |
-          . /opt/ibm/ace-12.0.2.0 setup --acceptLicense
+            chmod +x /opt/ibm/ace-12.0.2.0/ setup
+            /opt/ibm/ace-12.0.2.0/ setup --acceptLicense
+
