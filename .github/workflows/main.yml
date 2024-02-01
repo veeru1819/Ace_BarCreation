@@ -22,7 +22,7 @@ jobs:
         run: |
            cd $ACE_PATH
             ./ace
-            #./ace make registry global accept license
+            ./ace make registry global accept license
             echo 'y' | /home/desk-144/Documents/ace-12.0.2.0/ setup --acceptLicense
             echo 'export ACE_HOME="$ACE_PATH"' >> $HOME/.profile
             echo 'export PATH="$ACE_HOME/server/bin/mqsiprofile:$PATH"' >> $HOME/.profile
