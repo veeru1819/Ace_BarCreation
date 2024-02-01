@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+ #HOME: /root
+ ACE_PATH: /home/desk-144/Documents/ace-12.0.2.0/
+
 jobs:
   set-mqsiprofile:
     runs-on: self-hosted
@@ -15,9 +19,13 @@ jobs:
 
     - name: Set mqsiprofile
       run: |
+        cd $ACE_PATH
+        ./ace
+        ./ace make registry global accept license
+        cd $HOME
         # Add mqsiprofile configuration to .profile
         echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
-        echo '. /opt/ibm/ace-12.0.2.0/server/bin/mqsiprofile' >> $HOME/.profile
+        echo '. $ACE_PATH/bin/mqsiprofile' >> $HOME/.profile
 
     - name: Verify mqsiprofile
       run: |
