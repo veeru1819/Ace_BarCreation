@@ -15,4 +15,4 @@ jobs:
 
       - name: Accept ACE license
         run: |
-          /opt/ibm/ace-12.0.2.0 setup --acceptLicense
+          . /opt/ibm/ace-12.0.2.0 setup --acceptLicense
