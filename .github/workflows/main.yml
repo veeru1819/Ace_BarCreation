@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+	  
+env:
+ #HOME: /root
+ ACE_PATH: /home/desk-144/Documents/ace-12.0.2.0/	  
 
 jobs:
   setup-ace-mqsiprofile:
@@ -12,8 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Accept ACE license
+  
+      - name: Set up ACE mqsiprofile
         run: |
-          echo 'y' | /opt/ibm/ace-12.0.2.0 setup --acceptLicense
-          echo 'y' | /opt/ibm/ace-12.0.2.0 configure --acceptLicense
+          echo 'export ACE_HOME="$ACE_PATH"' >> $HOME/.profile
+          echo 'export PATH="$ACE_HOME/server/bin/mqsiprofile:$PATH"' >> $HOME/.profile
