@@ -29,7 +29,6 @@ jobs:
         echo '. /home/desk-144/Documents/ace-12.0.2.0/server/bin/mqsiprofile' >> $HOME/.profile        
         echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
 
-
     - name: Verify mqsiprofile
       run: |
         # Print the contents of .profile for verification
