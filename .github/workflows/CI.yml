@@ -41,5 +41,5 @@ jobs:
 
     - name: Verify MQSI_WORKPATH
       run: |
-        # Verify that MQSI_WORKPATH is set
+        # Verify that MQSI_WORKPATH is set correctly
         echo $MQSI_WORKPATH
