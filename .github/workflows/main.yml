@@ -17,11 +17,16 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: ace license accept
+    - name: Accept ACE license
       run: |
-        cd $ACE_PATH
-        ./ace
-        ./ace make registry global accept license
+          cd $ACE_PATH
+          ./ace
+          ./ace make registry global accept license      
+          echo 'y' | sudo /opt/ibm/ace-12.0.2.0 --acceptLicense
+          echo 'y' | sudo /opt/ibm/ace-12.0.2.0 --acceptLicense
+          cd $ACE_PATH
+          ./ace
+          ./ace make registry global accept license
 
     - name: Set mqsiprofile
       run: |
