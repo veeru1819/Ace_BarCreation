@@ -20,7 +20,8 @@ jobs:
 
       - name: Accept ACE license
         run: |
-          echo ' . "/home/desk-144/Documents/ace-12.0.2.0/server/bin/mqsiprofile" setup --acceptLicense'
-          echo ' . "/home/desk-144/Documents/ace-12.0.2.0/server/bin/mqsiprofile" configure --acceptLicense'
+          cd $ACE_PATH
+          . $ACE_PATH/server/bin/mqsiprofile setup --acceptLicense'
+          . $ACE_PATH/server/bin/mqsiprofile configure --acceptLicense'
           cat $HOME/.profile
           source $HOME/.profile          
