@@ -31,7 +31,7 @@ jobs:
 
     - name: Verify mqsiprofile
       run: |
-        # Print the contents of .profile for verification
+        # Print the contents of .profile 
         cat $HOME/.profile
 
     - name: Source .profile
