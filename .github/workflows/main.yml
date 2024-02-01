@@ -1,25 +1,35 @@
-name: Setup ACE mqsiprofile
+name: Set mqsiprofile in .profile
 
 on:
   push:
     branches:
-      - main  # Change this to your default branch
-
-env:
- HOME: /root
- ACE_PATH: /home/desk-144/Documents/ace-12.0.2.0/	
+      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+  set-mqsiprofile:
+    runs-on: self-hosted
     
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-      - name: Set up ACE mqsiprofile
-        run: |
-            echo 'export ACE_HOME="$ACE_PATH"' >>  $HOME/.profile
-            echo 'export PATH="$ACE_HOME/server/bin/mqsiprofile:$PATH"' >>  $HOME/.profile
-            cat  $HOME/.profile
+    - name: Set mqsiprofile
+      run: |
+        # Add mqsiprofile configuration to .profile
+        echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
+        echo '. /opt/ibm/ace-12.0.2.0/server/bin/mqsiprofile' >> $HOME/.profile
+
+    - name: Verify mqsiprofile
+      run: |
+        # Print the contents of .profile for verification
+        cat $HOME/.profile
+
+    - name: Source .profile
+      run: |
+        # Source .profile to apply changes for the current session
+        source $HOME/.profile
+
+    - name: Verify MQSI_WORKPATH
+      run: |
+        # Verify that MQSI_WORKPATH is set
+        echo $MQSI_WORKPATH
