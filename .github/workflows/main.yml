@@ -26,6 +26,7 @@ jobs:
     - name: Set mqsiprofile
       run: |
         # Add mqsiprofile configuration to .profile
+        sudo -s
         echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
         echo '. $ACE_PATH/bin/mqsiprofile' >> $HOME/.profile
 
