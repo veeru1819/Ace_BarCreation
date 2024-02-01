@@ -20,5 +20,5 @@ jobs:
 
       - name: Accept ACE license
         run: |
-          echo ' . /home/desk-144/Documents/ace-12.0.2.0/ace setup --acceptLicense'
+          echo ' . "/home/desk-144/Documents/ace-12.0.2.0/ace" setup --acceptLicense'
           echo 'y' | . /home/desk-144/Documents/ace-12.0.2.0/ace configure --acceptLicense
