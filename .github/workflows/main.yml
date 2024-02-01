@@ -1,4 +1,4 @@
-name: Install and Access Jenkins
+name: Install and Accessing Jenkins
 
 on:
   workflow_dispatch:
