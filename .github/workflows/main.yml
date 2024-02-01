@@ -17,15 +17,18 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Set mqsiprofile
+    - name: ace license accept
       run: |
         cd $ACE_PATH
         ./ace
         ./ace make registry global accept license
-        cd $HOME
+
+    - name: Set mqsiprofile
+      run: |
         # Add mqsiprofile configuration to .profile
         echo 'export MQSI_WORKPATH=$HOME/.mqsiproperties' >> $HOME/.profile
         echo '. $ACE_PATH/bin/mqsiprofile' >> $HOME/.profile
+
 
     - name: Verify mqsiprofile
       run: |
