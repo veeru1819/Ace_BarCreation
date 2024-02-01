@@ -21,9 +21,9 @@ jobs:
       run: |
           cd $ACE_PATH
           ./ace
-          ./ace make registry global accept license      
-          echo 'y' | sudo /opt/ibm/ace-12.0.2.0 --acceptLicense
-          echo 'y' | sudo /opt/ibm/ace-12.0.2.0 --acceptLicense
+          ./ace make registry global setup --acceptLicense   
+          #echo 'y' | sudo /opt/ibm/ace-12.0.2.0 --acceptLicense
+          #echo 'y' | sudo /opt/ibm/ace-12.0.2.0 --acceptLicense
           cd $ACE_PATH
           ./ace
           ./ace make registry global accept license
