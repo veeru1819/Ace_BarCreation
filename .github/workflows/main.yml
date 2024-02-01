@@ -21,6 +21,6 @@ jobs:
 
       - name: Set up ACE mqsiprofile
         run: |
-            echo 'export ACE_HOME="$ACE_PATH"' >> $HOME/.profile
-            echo 'export PATH="$ACE_HOME/server/bin/mqsiprofile:$PATH"' >> $HOME/.profile
-            cat $HOME/.profile
+            echo 'export ACE_HOME="$ACE_PATH"' >>  /root/.profile
+            echo 'export PATH="$ACE_HOME/server/bin/mqsiprofile:$PATH"' >>  /root/.profile
+            cat  /root/.profile
