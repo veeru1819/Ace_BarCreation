@@ -14,3 +14,7 @@ jobs:
       run: |
         export ACE_VERSION=12.0.2.0
         export ACE_PATH=/home/desk-144/Documents/ace-${ACE_VERSION}
+
+    - name: Set up mqsiprofile
+      run: |
+        echo "export PATH=\$PATH:/home/desk-144/Documents/ace-${ACE_VERSION}/server/bin" >> $HOME/.profile        
