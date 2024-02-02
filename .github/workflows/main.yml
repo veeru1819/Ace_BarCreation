@@ -21,8 +21,8 @@ jobs:
       - name: Accept ACE license
         run: |
           cd $ACE_PATH
-          . $ACE_PATH/server/bin/mqsiprofile setup --acceptLicense'
-          . $ACE_PATH/server/bin/mqsiprofile configure --acceptLicense'
-          #. $ACE_PATH/ace make registry global accept license silently
-          cat $HOME/.profile
-          source $HOME/.profile          
+          #. $ACE_PATH/server/bin/mqsiprofile setup --acceptLicense'
+          #. $ACE_PATH/server/bin/mqsiprofile configure --acceptLicense'
+          . $ACE_PATH/ace make registry global accept license silently
+          #cat $HOME/.profile
+          #source $HOME/.profile    
