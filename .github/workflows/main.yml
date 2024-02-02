@@ -18,3 +18,8 @@ jobs:
     - name: Set up mqsiprofile
       run: |
         echo "export PATH=\$PATH:/home/desk-144/Documents/ace-${ACE_VERSION}/server/bin" >> $HOME/.profile        
+
+    - name: Display Installed ACE Version
+      run: |
+        source $HOME/.profile
+        mqsicvp        
