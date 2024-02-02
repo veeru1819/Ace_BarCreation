@@ -25,4 +25,4 @@ jobs:
           #. $ACE_PATH/server/bin/mqsiprofile configure --acceptLicense'
           . $ACE_PATH/ace make registry global accept license silently
           cat /root/.profile
-          source root/.profile          
+          source /root/.profile          
